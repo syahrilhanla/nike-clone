@@ -11,7 +11,7 @@ const Hero = () => {
 				/>
 			</div>
 			<div className=" flex flex-col gap-4 justify-center items-center py-6">
-				<h1 className="md:text-6xl md:font-extrabold text-3xl font-semibold ">
+				<h1 className="md:text-6xl md:font-bold text-3xl text-center font-semibold ">
 					PEACE THROUGH ANY POSE
 				</h1>
 				<p>Nike Yoga Soul Festival Collection</p>

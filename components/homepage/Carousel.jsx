@@ -45,14 +45,14 @@ const Carousel = () => {
 					))}
 
 					<div
-						className="swiper-button-next duration-200
-            bg-slate-100 shadow-md p-7 pl-8 rounded-full
+						className="swiper-button-next
+            bg-slate-100 shadow-md p-7 pl-8 rounded-full md:opacity-100 opacity-30
            hover:bg-slate-200 duration-300 shadow-slate-400"
 						style={{ color: "gray" }}
 					></div>
 					<div
-						className="swiper-button-prev duration-200
-            bg-slate-100 shadow-md p-7 pr-8 rounded-full
+						className="swiper-button-prev
+            bg-slate-100 shadow-md p-7 pr-8 rounded-full md:opacity-100 opacity-30
            hover:bg-slate-200 duration-300 shadow-slate-400"
 						style={{ color: "gray" }}
 					></div>
