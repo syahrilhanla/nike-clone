@@ -7,7 +7,10 @@ const DynamicSection = ({ data }) => {
        px-4 gap-3 md:pb-12 pb-8`}
 		>
 			{data.map((item) => (
-				<div className="relative w-full h-fit bg-cover bg-no-repeat bg-center rounded-xl">
+				<div
+					className="relative w-full h-fit bg-cover bg-no-repeat bg-center rounded-xl"
+					key={item.text}
+				>
 					<img
 						src={`/homepage/${item.sectionImage}`}
 						className="w-full rounded-sm"
