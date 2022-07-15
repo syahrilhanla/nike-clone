@@ -1,26 +1,63 @@
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Scrollbar } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/scrollbar";
+
+import CarouselHeader from "./CarouselHeader";
+import ProductCard from "./ProductCard";
+
+import homepageProducts from "../data/homepageProducts";
 
 const Carousel = () => {
 	return (
-		<div className="flex justify-center py-4">
-			<header className="w-full flex flex-row justify-between items-center px-8 md:px-20">
-				<h2 className="w-fit">Shop New Releases</h2>
-				{/* Carousel Navigation */}
-				<div className="w-fit">
-					<button
-						className="rounded-full p-2 bg-slate-200 shadow-md
-           hover:bg-slate-300 duration-300 shadow-slate-400 mr-3"
-					>
-						<BsChevronLeft />
-					</button>
-					<button
-						className="rounded-full p-2 bg-slate-200 shadow-md
-          hover:bg-slate-300 duration-300 shadow-slate-400"
-					>
-						<BsChevronRight />
-					</button>
-				</div>
-			</header>
+		<div className="flex flex-col justify-center items-center py-4">
+			<CarouselHeader />
+			<div className="max-w-[95%] my-5 ">
+				<Swiper
+					// install Swiper modules
+					slidesPerView={3}
+					modules={[Navigation, Scrollbar]}
+					navigation={{
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev",
+					}}
+					scrollbar={{
+						draggable: true,
+						hide: true,
+					}}
+					spaceBetween={30}
+					breakpoints={{
+						240: {
+							slidesPerView: 1,
+							spaceBetween: 30,
+						},
+						640: {
+							slidesPerView: 3,
+							spaceBetween: 30,
+						},
+					}}
+				>
+					{homepageProducts.map((product) => (
+						<SwiperSlide key={product.productName}>
+							<ProductCard product={product} />
+						</SwiperSlide>
+					))}
+
+					<div
+						className="swiper-button-next duration-200
+            bg-slate-100 shadow-md p-7 pl-8 rounded-full
+           hover:bg-slate-200 duration-300 shadow-slate-400"
+						style={{ color: "gray" }}
+					></div>
+					<div
+						className="swiper-button-prev duration-200
+            bg-slate-100 shadow-md p-7 pr-8 rounded-full
+           hover:bg-slate-200 duration-300 shadow-slate-400"
+						style={{ color: "gray" }}
+					></div>
+				</Swiper>
+			</div>
 		</div>
 	);
 };
