@@ -3,10 +3,10 @@ import ShopButton from "../common/ShopButton";
 const Hero = () => {
 	return (
 		<div className="w-full flex flex-col justify-center items-center">
-			<div className="relative w-[90vw] bg-cover bg-no-repeat bg-center">
+			<div className="relative w-[90%] bg-cover bg-no-repeat bg-center">
 				<img
 					src={"/homepage/yoga-guy.webp"}
-					className="w-fit rounded-sm"
+					className="w-full rounded-sm"
 					alt="Yoga"
 				/>
 			</div>
